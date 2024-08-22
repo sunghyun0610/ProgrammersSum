@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+
+    <!--    @WebServlet이랑 같은기능-->
+    <servlet>
+        <servlet-name>sunghyun_dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sunghyun_dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+        <!--        모든 요청 일단 내가 다 받을게-->
+    </servlet-mapping>
+
+    <!--   "DispatcherServlet이 사용하는 애플리케이션 컨텍스트 안에 viewResolver라는 빈이 등록되어 있는 거야? == 네-->
+</web-app>
