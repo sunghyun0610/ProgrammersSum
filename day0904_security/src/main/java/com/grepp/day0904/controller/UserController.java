@@ -33,7 +33,7 @@ public class UserController {
         UserEntity userEntity = userService.getByCredentials(userDTO.getUsername(), userDTO.getPassword());
 
         if(userEntity != null){ // login success
-            String token = myJwtTokenProvider.createMyToken(userEntity, 1000*60);
+            String token = myJwtTokenProvider.createMyToken(userEntity, 2000*60);
             userDTO.setToken(token);
             return ResponseEntity.ok().body(userDTO); // token이 포함된 정보가 응답됨.
         }
